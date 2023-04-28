@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const handleNewUser = async (req, res) => {
 
     console.log(req.body)
-    const { firstName, lastName, email, password, phone, cardModel } = req.body;
+    const { firstName, lastName, email, password, phone, carModel } = req.body;
     // const user = req.body.username;
     // const email = req.body.email;
     // const pwd = req.body.password;
@@ -26,7 +26,7 @@ const handleNewUser = async (req, res) => {
             "email": email,
             "password": hashedPwd,
             "phone": phone,
-            "cardModel":cardModel
+            "carModel":carModel
         });
 
         console.log(result);

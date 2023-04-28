@@ -26,11 +26,11 @@ const userSchema = new Schema({ //object
     },
 
     phone: {
-        type: Number,
+        type: String,
         required: true
     },
 
-    cardModel: {
+    carModel: {
         type: String,
     },
 
@@ -38,6 +38,11 @@ const userSchema = new Schema({ //object
     // role: {
     //     type: String,
     //     default: "Basic"
+    // }
+
+    //serviceType: {
+    //     type: String,
+    //     default: "-"
     // }
 
 });

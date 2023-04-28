@@ -1,8 +1,11 @@
 
 const User = require('../models/user.js');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const sendEmail = require('../controllers/sendEmail');
+
+const JWT_SECRET ="pusp6ThEdURUtRenOwUhAsWUCLheBazl!uJLPlS8EbreWLdrupIwabRAsiBu";
 
 
 const handleLogin = async (req, res) => {
@@ -22,9 +25,13 @@ const handleLogin = async (req, res) => {
     // evaluate password 
     const match = await bcrypt.compare(pwd, foundUser.password);
     if (match) {
-        res.status(200).json({
-            message: "Login successful"
-          })
+
+        jwt.sign({email:email},JWT_SECRET,(err,token)=>{
+          return res.status(200).json({token})
+        })
+        // res.status(200).json({
+        //     message: "Login successful"
+        //   })
 
          // sendEmail(email,"reset");
         
