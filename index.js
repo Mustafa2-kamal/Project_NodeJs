@@ -43,9 +43,13 @@ app.use('/userInfo', require('./routes/userInfo'));
 
 app.use('/userUpdate', require('./routes/updateUser'));
 
+app.use('/changePassword', require('./routes/changePassword'));
+
 app.use('/addService', require('./routes/addService'));
 
-app.use('/services', require('./routes/getAllServices'));
+app.use('/allServices', require('./routes/getAllServices'));
+
+app.use('/services', require('./routes/getRandomServices'));
 
 app.use('/addCarModel', require('./routes/addCarModel'));
 

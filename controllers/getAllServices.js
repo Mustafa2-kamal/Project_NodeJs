@@ -3,19 +3,17 @@ const Service =require('../models/services.js')
 
 
 const handleGetAllServices = async (req, res) => {
-    // const user = req.body.username;
-    // const email = req.params.userId;
-    // console.log(email);
 
-    // const foundUser = await Service.find({});
-     const foundUser2 = await Service.aggregate([{$sample:{size:5}}]);
+
+      const found = await Service.find({});
+    //   const found = await Service.aggregate([{$sample:{size:1}}]);
     // console.log(foundUser2);
 
 
-    if (!foundUser2) return res.status(401).send("message:The email is incorrect");//({'message': "The email or password is incorrect","status":"401"}); //Unauthorized 
+    if (!found) return res.status(401).send("message:No Services");//({'message': "The email or password is incorrect","status":"401"}); //Unauthorized 
 
 //    console.log(foundUser[0].serviceName);
-    res.status(200).send(foundUser2)
+     res.status(200).send(found)
 
 }
 

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const userInfo = require('../controllers/userInfo');
+const changePassword = require('../controllers/changePassword');
 
 const jwt = require('jsonwebtoken');
 const JWT_SECRET ="pusp6ThEdURUtRenOwUhAsWUCLheBazl!uJLPlS8EbreWLdrupIwabRAsiBu";
@@ -18,7 +18,6 @@ const verifyUserToken = (req, res, next) => {
     try {
       const decoded = jwt.verify(token, JWT_SECRET);
       req.user = decoded.user;
-      // console.log(req.user);
       next();
     } catch (err) {
       res.status(400).send("Invalid token.");
@@ -27,6 +26,6 @@ const verifyUserToken = (req, res, next) => {
 
 
 //path start with /userInfo/:userid
-router.get('/:userId',verifyUserToken, userInfo.handleUserInfo);
+router.patch('/:userId',verifyUserToken, changePassword.handleChangePassword);
 
 module.exports = router;

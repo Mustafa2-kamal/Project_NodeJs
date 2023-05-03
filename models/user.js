@@ -34,16 +34,44 @@ const userSchema = new Schema({ //object
         type: String,
     },
 
+    city: {
+        type: String,
+    },
 
-    // role: {
-    //     type: String,
-    //     default: "Basic"
-    // }
+    street: {
+        type: String,
+    },
 
-    //serviceType: {
-    //     type: String,
-    //     default: "-"
-    // }
+    longitude: {
+        type: Number,
+    },
+
+    latitude: {
+        type: Number,
+    },
+
+
+    // city,street,longitude,latitude,bio,rating
+    role: {
+        type: String,
+        default: "Basic"
+    },
+
+    major: {
+        type: String,
+        default: "-"
+    },
+
+    bio: {
+        type: String,
+        default: "-"
+    },
+
+    rating: {
+        type: String,
+        default: "-"
+    }
+
 
 });
 
