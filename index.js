@@ -45,6 +45,8 @@ app.use('/userUpdate', require('./routes/updateUser'));
 
 app.use('/changePassword', require('./routes/changePassword'));
 
+app.use('/updateLocation', require('./routes/updateLocation'));
+
 app.use('/addService', require('./routes/addService'));
 
 app.use('/allServices', require('./routes/getAllServices'));

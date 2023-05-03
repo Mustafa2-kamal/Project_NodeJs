@@ -1,7 +1,6 @@
 const User = require('../models/user.js');
-const bcrypt = require('bcrypt');
 
-const handleUpdateUser = async (req, res) => {
+const handleUpdateLocation = async (req, res) => {
 
     console.log(req.body)
  
@@ -36,4 +35,4 @@ const handleUpdateUser = async (req, res) => {
     }
 }
 
-module.exports = { handleUpdateUser };
+module.exports = {handleUpdateLocation};
