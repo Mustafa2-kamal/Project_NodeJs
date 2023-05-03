@@ -17,6 +17,6 @@ const upload=multer();
 //     }
 // })
 
-router.post('/', upload.single('upload'),  addImage.handleNewImage);
+router.post('/:userId', upload.single('upload'),  addImage.handleNewImage);
 
 module.exports = router;
