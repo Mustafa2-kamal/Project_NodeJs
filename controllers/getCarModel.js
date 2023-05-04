@@ -15,7 +15,7 @@ const handleGetAllCarModels = async (req, res) => {
     foundUser.forEach(function (carMdl) {
         results.push(carMdl.carModel);
     });
-    console.log(results);
+    //console.log(results);
     res.status(200).send(results);
 
 }

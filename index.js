@@ -59,6 +59,12 @@ app.use('/carModels', require('./routes/getCarModel'));
 
 app.use('/addImage', require('./routes/addImage'));
 
+app.use('/getWorkers', require('./routes/getWorkers'));
+
+app.use('/addWorker', require('./routes/addWorker'));
+
+
+
 
 
 //to run server nodemon index.js

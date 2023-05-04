@@ -4,6 +4,11 @@ const { Schema } = mongoose;
 //define structure
 const userSchema = new Schema({ //object
 
+
+    imgUrl: {
+        type: String,
+    },
+
     firstName: {
         type: String,
         required: true
@@ -59,17 +64,14 @@ const userSchema = new Schema({ //object
 
     major: {
         type: String,
-        default: "-"
     },
 
     bio: {
         type: String,
-        default: "-"
     },
 
     rating: {
         type: String,
-        default: "-"
     }
 
 
