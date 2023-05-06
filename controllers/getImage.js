@@ -14,7 +14,7 @@ const handleGetImage = async (req, res) => {
 
     if (!found) return res.status(404).json({ message: "No workers" });
 
-    res.status(200).json({image:found.imageUrl});
+    res.status(200).json({image:found[0].imageUrl.toString("base64")});
 
 }
 
