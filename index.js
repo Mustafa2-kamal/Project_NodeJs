@@ -59,6 +59,8 @@ app.use('/carModels', require('./routes/getCarModel'));
 
 app.use('/addImage', require('./routes/addImage'));
 
+app.use('/getImage', require('./routes/getImage'));
+
 app.use('/getWorkers', require('./routes/getWorkers'));
 
 app.use('/addWorker', require('./routes/addWorker'));

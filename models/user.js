@@ -5,8 +5,9 @@ const { Schema } = mongoose;
 const userSchema = new Schema({ //object
 
 
-    imgUrl: {
+    imageUrl: {
         type: String,
+        default:'fffffff';
     },
 
     firstName: {
@@ -46,7 +47,7 @@ const userSchema = new Schema({ //object
 
     street: {
         type: String,
-        default:"ld Campus Street 7"
+        default:"old Campus Street 7"
     },
 
     longitude: {
@@ -80,6 +81,7 @@ const userSchema = new Schema({ //object
 
     rating: {
         type: Number,
+        default:5
     }
 
 
