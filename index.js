@@ -71,7 +71,8 @@ app.use('/servicesNames', require('./routes/servicesNames'));
 
 app.use('/resetPassword', require('./routes/resetPassword'));
 
-app.use('/sendEmail', require('./routes/sendEmail'));  
+app.use('/sendEmail', require('./routes/sendEmail'));
+
 
 
 

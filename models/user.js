@@ -41,18 +41,22 @@ const userSchema = new Schema({ //object
 
     city: {
         type: String,
+        default:"Nablus"
     },
 
     street: {
         type: String,
+        default:"ld Campus Street 7"
     },
 
     longitude: {
         type: Number,
+        default:35.220625
     },
 
     latitude: {
         type: Number,
+        default:32.22755
     },
 
 
@@ -75,7 +79,7 @@ const userSchema = new Schema({ //object
     },
 
     rating: {
-        type: String,
+        type: Number,
     }
 
 
