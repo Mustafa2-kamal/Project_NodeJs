@@ -7,7 +7,7 @@ const userSchema = new Schema({ //object
 
     imageUrl: {
         type: String,
-        default:'fffffff';
+        default:'fffffff'
     },
 
     firstName: {
