@@ -7,9 +7,8 @@ const handleNewCarModel = async (req, res) => {
     const { carModel} = req.body;
    
 
-   // check for duplicate usernames in the db
-    const isUserExist = await carModeldb.findOne({ carModel: carModel }).exec();
-    if (isUserExist) return res.status(409).json({ 'message': `This service: ${carModel} is already exist. ` }); //Conflict 
+    const isExist = await carModeldb.findOne({ carModel: carModel }).exec();
+    if (isExist) return res.status(409).json({ 'message': `This service: ${carModel} is already exist. ` }); //Conflict 
 
     try {
 

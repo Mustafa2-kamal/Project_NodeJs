@@ -63,6 +63,17 @@ app.use('/getWorkers', require('./routes/getWorkers'));
 
 app.use('/addWorker', require('./routes/addWorker'));
 
+app.use('/addCarMaker', require('./routes/addCarMaker'));
+
+app.use('/carMakers', require('./routes/getCarMaker'));
+
+app.use('/servicesNames', require('./routes/servicesNames'));
+
+app.use('/resetPassword', require('./routes/resetPassword'));
+
+app.use('/sendEmail', require('./routes/sendEmail'));  
+
+
 
 
 

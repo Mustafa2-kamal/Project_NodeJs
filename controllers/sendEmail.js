@@ -2,9 +2,20 @@
 const nodemailer = require("nodemailer");
 const User = require('../models/user.js');
 
-const sendEmail = async (email, subject, text) => {
+const handlSendEmail = async (req, res) => {
 
-console.log(process.env.USER,process.env.PASS,process.env.HOST,process.env.SERVICE)
+
+
+    const email = req.params.userId;
+
+    console.log(email);
+
+    // const foundUser = await User.findOne({ email: email})
+
+    // if (!foundUser) return res.status(404).send("message:not found");//({'message': "The email or password is incorrect","status":"401"}); //Unauthorized 
+
+ 
+
     try {
         const transporter = nodemailer.createTransport({
             //host: process.env.HOST,
@@ -30,17 +41,18 @@ console.log(process.env.USER,process.env.PASS,process.env.HOST,process.env.SERVI
         await transporter.sendMail({
             from: 'a-lamak@hotmail.com',
             to: 'mostafakamalsokar@gmail.com',
-            subject: subject,
-            text: `http://localhost:5000/resetPassword?username=${email}`
+            subject: 'Reset your password for Head Gasket app',
+            text: `http://localhost:3000/resetPassword/userId=${email}`
         });
    
 
         console.log("email sent sucessfully");
+        res.status(200).json({message:"password reset link sent successfully,check your email"});
 
     } catch (error) {
         console.log(error);
-        console.log(error, "email not sent");
+        res.status(500).json({ 'message': err.message });
     }
 };
 
-module.exports = sendEmail;
+module.exports = {handlSendEmail};

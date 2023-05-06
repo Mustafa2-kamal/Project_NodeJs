@@ -66,6 +66,10 @@ const userSchema = new Schema({ //object
         type: String,
     },
 
+    carBrand:{
+        type: String,
+    },
+
     bio: {
         type: String,
     },
