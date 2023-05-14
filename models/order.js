@@ -37,7 +37,13 @@ const orderSchema = new Schema({ //object
         type: Date,
         required: true,
         default: Date.now
-    } 
+    },
+    delivery:{
+        type: String,
+    },
+    payment: {
+        type: String,
+    },
 
 });
 

@@ -4,7 +4,7 @@ const Order = require('../models/order.js');
 const handleGetOrders = async (req, res) => {
     // const Order = req.body.Ordername;
     const email = req.params.userId;
-    const role = req.body.role;
+    const role = req.params.role;
 
     console.log(email);
     const foundOrder='';

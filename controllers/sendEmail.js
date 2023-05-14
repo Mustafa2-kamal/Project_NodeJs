@@ -42,7 +42,7 @@ const handlSendEmail = async (req, res) => {
             from: 'a-lamak@hotmail.com',
             to: 'mostafakamalsokar@gmail.com',//this is {email}
             subject: 'Reset your password for Head Gasket app',
-            text: `http://localhost:3000/resetPassword/${email}`
+            text: `Hi there,\n Click on the link below to reset your password \n http://localhost:3000/resetPassword/${email}`
         });
    
 
