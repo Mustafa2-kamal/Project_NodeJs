@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const send = require('../controllers/sendEmail');
+const Order= require('../controllers/addOrder.js');
 
-router.get('/:userId', send.handlSendEmail);
+router.post('/', Order.handleNewOrder);
 
 module.exports = router;

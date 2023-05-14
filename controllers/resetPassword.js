@@ -5,18 +5,65 @@ const handleResetPassword = async (req, res) => {
     const email = req.params.userId;
 
     res.status(200).send(`
-    <form method="post" action='/resetPassword/${email}'>
-      <input type="hidden"  >
-      <label>
-        New password:
-        <input type="password" name="password" required>
-      </label>
-      <label>
-      Confirm password:
-      <input type="password" name="password" required>
-    </label>
-      <button type="submit">Reset password</button>
-    </form>
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password Form</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body style="background-color: #eaf7f7">
+    <div class="form-gap"></div>
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <h3><i class="fa fa-lock fa-4x"></i></h3>
+                            <h2 class="text-center">Reset Password</h2>
+                            <p>You can reset your password here.</p>
+                            <div class="panel-body">
+
+                                <form id="register-form" autocomplete="off" class="form" method="post" action='/confirmResetPassword/${email}'>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-lock"
+                                                    aria-hidden="true"></i></span>
+                                            <input id="email" name="newPassword" placeholder="New Password" class="form-control"
+                                                type="password" required>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input name="recover-submit" class="btn btn-lg btn-primary btn-block"
+                                            value="Reset Password" type="submit">
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
   `);
 
 }

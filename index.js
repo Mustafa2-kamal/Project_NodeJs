@@ -75,6 +75,23 @@ app.use('/resetPassword', require('./routes/resetPassword'));
 
 app.use('/sendEmail', require('./routes/sendEmail'));
 
+app.use('/confirmResetPassword', require('./routes/confirmResetPassword'));
+
+app.use('/addProduct', require('./routes/addProduct.js'));
+
+app.use('/Products', require('./routes/getProducts.js'));
+
+app.use('/addOrder', require('./routes/addOrder.js'));
+
+app.use('/orders', require('./routes/getOrders.js'));
+
+
+
+
+app.use('*',(req,res)=>{
+  return res.status(404).json({message:'Page not found'})
+})
+
 
 
 

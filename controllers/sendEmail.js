@@ -40,9 +40,9 @@ const handlSendEmail = async (req, res) => {
 
         await transporter.sendMail({
             from: 'a-lamak@hotmail.com',
-            to: 'mostafakamalsokar@gmail.com',
+            to: 'mostafakamalsokar@gmail.com',//this is {email}
             subject: 'Reset your password for Head Gasket app',
-            text: `http://localhost:3000/resetPassword/userId=${email}`
+            text: `http://localhost:3000/resetPassword/${email}`
         });
    
 

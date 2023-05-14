@@ -4,10 +4,10 @@ const { Schema } = mongoose;
 //define structure
 const productSchema = new Schema({ //object
 
+    //id
     name: {
         type: String,
         required: true,
-        unique: true
     },
 
     // "id": 2,
@@ -22,12 +22,7 @@ const productSchema = new Schema({ //object
         required: true
     },
 
-    model: {
-        type: String,
-        required: true
-    },
-
-   color: {
+    type: {
         type: String,
         required: true
     },
@@ -42,7 +37,7 @@ const productSchema = new Schema({ //object
         required: true
     },
 
-    image: {
+    imageUrl: {
         type: String,
         required: true
     }
@@ -51,7 +46,7 @@ const productSchema = new Schema({ //object
 
 
 //create model based on schema
-const Service = mongoose.model('Service', serviceSchema);
+const Product = mongoose.model('Product', productSchema);
 
 //export the model
-module.exports=Service;
+module.exports=Product;

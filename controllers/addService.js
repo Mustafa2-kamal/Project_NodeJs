@@ -1,6 +1,6 @@
-const User = require('../models/user.js');
+
 const Service =require('../models/services.js')
-const bcrypt = require('bcrypt');
+
 
 const handleNewService = async (req, res) => {
 
@@ -9,8 +9,8 @@ const handleNewService = async (req, res) => {
    
 
    // check for duplicate usernames in the db
-    const isUserExist = await User.findOne({ serviceName: serviceName }).exec();
-    if (isUserExist) return res.status(409).json({ 'message': `This service: ${serviceName} is already exist. ` }); //Conflict 
+    const isServiceExist = await Service.findOne({ serviceName: serviceName }).exec();
+    if (isServiceExist) return res.status(409).json({ 'message': `This service: ${serviceName} is already exist. ` }); //Conflict 
 
     try {
 
@@ -25,7 +25,7 @@ const handleNewService = async (req, res) => {
 
         res.status(200).json({ 'success': ` the service ${serviceName} added successfully` });
     } catch (err) {
-        res.status(500).json({ 'message': err.message });
+        res.status(500).json({ 'message': err.message});
     }
 }
 
