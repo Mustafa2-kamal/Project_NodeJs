@@ -7,7 +7,7 @@ const handleGetOrders = async (req, res) => {
     const role = req.params.role;
 
     console.log(email);
-    const foundOrder='';
+    let foundOrder='';
 
     if(role=='Basic'){
         foundOrder = await Order.findOne({ Order: email })
