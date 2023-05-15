@@ -12,6 +12,7 @@ const handleNewImage = async (req, res) => {
         
         const buffer = await sharp(req.file.buffer).resize({ width: 250, height: 250 }).png().toBuffer()
         //req.Trainer.image = buffer
+       req.file.buffer=buffer;
         console.log(buffer);
 
     const result = await User.findOneAndUpdate({email:email}, {imageUrl:buffer},{new:true});

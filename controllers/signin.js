@@ -27,7 +27,7 @@ const handleLogin = async (req, res) => {
     if (match) {
 
         jwt.sign({email:email},JWT_SECRET,(err,token)=>{
-          return res.status(200).json({token})
+          return res.status(200).json({token,role:foundUser.role});
         })
         // res.status(200).json({
         //     message: "Login successful"
