@@ -3,19 +3,27 @@ const Order =require('../models/order.js')
 
 const handleNewOrder = async (req, res) => {
 
-    console.log(req.body)
-    const { user,worker,serviceName,note,status} = req.body;
+    console.log('hhhhhhh');
+
+    console.log(req.body);
+    const { userEmail,userName,workerEmail,workerName,serviceName,note,status,city,street,carModel} = req.body;
    
 
     try {
 
         //create and store the new order
         const result = await Order.create({ 
-            "user": user,
-            "worker": worker,
+            "userEmail": userEmail,
+            "userName": userName,
+            "carModel":carModel,
+            "workerEmail": workerEmail,
+            "workerName": workerName,
             "serviceName": serviceName,
             "note": note,
-            "status":status
+            "status":status,
+            "city":city,
+            "street":street,
+            
         });
 
         res.status(200).json({ 'success': ` the Order added successfully` });

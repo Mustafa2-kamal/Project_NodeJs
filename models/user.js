@@ -81,7 +81,7 @@ const userSchema = new Schema({ //object
 
     rating: {
         type: Number,
-        default:5
+        default:1.5
     }
 
 

@@ -83,7 +83,14 @@ app.use('/Products', require('./routes/getProducts.js'));
 
 app.use('/addOrder', require('./routes/addOrder.js'));
 
-app.use('/orders', require('./routes/getOrders.js'));
+app.use('/userOrders', require('./routes/getUserOrders.js'));
+app.use('/workerOrders', require('./routes/getWorkerOrders.js'));
+
+app.use('/updateOrder', require('./routes/updateOrder.js'));
+
+app.use('/rateWorker', require('./routes/rateWorker.js'));
+
+app.use('/topWorkers', require('./routes/topWorkers.js'));
 
 
 

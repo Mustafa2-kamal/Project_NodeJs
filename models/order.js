@@ -1,16 +1,31 @@
-const mongoose=require("mongoose")
+const mongoose=require("mongoose");
 const { Schema } = mongoose;
 
 //define structure
 const orderSchema = new Schema({ //object
 
     //id
-    user: {
+    userEmail: {
         type: String,
         required: true,
     },
 
-    worker: {
+    userName: {
+        type: String,
+        required: true,
+    },
+
+    carModel: {
+        type: String,
+        required: true,
+    },
+
+    workerEmail: {
+        type: String,
+        required: true
+    },
+
+    workerName: {
         type: String,
         required: true
     },
@@ -22,6 +37,7 @@ const orderSchema = new Schema({ //object
 
     price: {
         type: Number,
+        default:0.5
     },
 
     status: {
@@ -31,18 +47,31 @@ const orderSchema = new Schema({ //object
 
     note: {
         type: String,
+        default:''
     },
 
-    created_at:{
+    city: {
+        type: String,
+        default:'---'
+    },
+
+    street: {
+        type: String,
+        default:'---'
+    },
+
+    date:{
         type: Date,
         required: true,
-        default: Date.now
+        default:  Date.now(),
     },
     delivery:{
         type: String,
+        default:'-'
     },
     payment: {
         type: String,
+        default:'-'
     },
 
 });
