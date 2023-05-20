@@ -3,7 +3,7 @@ const router = express.Router();
 const addImage= require('../controllers/addImage');
 
 const multer = require('multer');
-const upload=multer();
+ const upload=multer();
 
 // const upload = multer({
 //     limits: {
@@ -17,7 +17,7 @@ const upload=multer();
 //     }
 // })
 
-router.post('/:userId', upload.single('upload'),  addImage.handleNewImage);
+router.post('/:userId',upload.single('upload'),  addImage.handleNewImage);
 
 
 module.exports = router;

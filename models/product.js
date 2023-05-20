@@ -28,18 +28,20 @@ const productSchema = new Schema({ //object
     },
 
     price: {
-        type: String,
+        type: Number,
         required: true
     },
 
     quantity: {
-        type: String,
+        type: Number,
         required: true
     },
 
     imageUrl: {
         type: String,
-        required: true
+        required: true,
+        default:'fghj'
+
     }
 
 });

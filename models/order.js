@@ -47,7 +47,7 @@ const orderSchema = new Schema({ //object
 
     note: {
         type: String,
-        default:''
+        default:'-'
     },
 
     city: {
