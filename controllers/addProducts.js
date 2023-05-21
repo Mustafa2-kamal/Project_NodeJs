@@ -1,5 +1,8 @@
 
-const Product =require('../models/product.js')
+const Product =require('../models/product.js');
+const express = require('express');
+const app = express();
+app.use(express.json());
 
 const handleNewProduct = async (req, res) => {
 
@@ -8,19 +11,14 @@ const handleNewProduct = async (req, res) => {
    
 
    // check for duplicate usernames in the db
-    const isProductExist = await Product.findOne({ name: name, brand:brand}).exec();
-    if (isProductExist) return res.status(409).json({ 'message': `This Product is already exist. ` }); //Conflict 
+    // const isProductExist = await Product.findOne({ name: name, brand:brand}).exec();
+    // if (isProductExist) return res.status(409).json({ 'message': `This Product is already exist. ` }); //Conflict 
 
     try {
 
         //create and store the new user
-        const result = await Product.create({ 
-            "name": name,
-            "brand": brand,
-            "type": type,
-            "price": price,
-            "quantity":quantity
-        });
+        const result = await Product.insertMany
+        (req.body);
 
         console.log(result);
 

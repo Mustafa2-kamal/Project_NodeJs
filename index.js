@@ -92,6 +92,8 @@ app.use('/rateWorker', require('./routes/rateWorker.js'));
 
 app.use('/topWorkers', require('./routes/topWorkers.js'));
 
+app.use('/updateProduct', require('./routes/updateProduct.js'));
+
 
 
 
