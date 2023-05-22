@@ -1,9 +1,23 @@
 const express = require('express');
 const router = express.Router();
+const path=require('path');
+
 const addImage= require('../controllers/addImage');
 
 const multer = require('multer');
- const upload=multer();
+
+var storage=multer.diskStorage({
+    destination:function(req,file,cb){
+        cb(null,__dirname+"/uploads/images");
+    },
+    filename:function(req,file,cb){
+        cb(null,Date.now()+path.extname(file.originalname));
+    }
+});
+
+const upload=multer({storage:storage});
+
+// const upload=multer();
 
 // const upload = multer({
 //     limits: {
@@ -17,7 +31,7 @@ const multer = require('multer');
 //     }
 // })
 
-router.post('/:userId',upload.single('upload'),  addImage.handleNewImage);
+router.post('/:userId',upload.single('image'),  addImage.handleNewImage);
 
 
 module.exports = router;

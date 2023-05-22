@@ -94,6 +94,9 @@ app.use('/topWorkers', require('./routes/topWorkers.js'));
 
 app.use('/updateProduct', require('./routes/updateProduct.js'));
 
+app.use('/removeUser', require('./routes/deleteUser.js'));
+
+app.use('/allUsers', require('./routes/getUsers.js'));
 
 
 
