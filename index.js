@@ -98,6 +98,8 @@ app.use('/removeUser', require('./routes/deleteUser.js'));
 
 app.use('/allUsers', require('./routes/getUsers.js'));
 
+app.use('/someProduct', require('./routes/getRandomProduct.js'));
+
 
 
 app.use('*',(req,res)=>{

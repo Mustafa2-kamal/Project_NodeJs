@@ -4,7 +4,7 @@ const User = require('../models/user.js');
 
 const handleGetTopWorkers = async (req, res) => {
 
-
+    console.log('lllll');
     const found = await User.find({ role: 'worker'}).exec();
 
 
