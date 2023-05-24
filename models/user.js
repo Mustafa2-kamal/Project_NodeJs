@@ -6,8 +6,8 @@ const userSchema = new Schema({ //object
 
 
     imageUrl: {
-        type: String, 
-        default:'fffffff'
+        type: Buffer, 
+    
     },
 
     firstName: {
@@ -87,6 +87,18 @@ const userSchema = new Schema({ //object
 
 });
 
+userSchema.methods.toJSON = function () {
+    const user = this
+    const userObject = user.toObject()
+
+    delete userObject.password
+    delete userObject.tokens
+    if(userObject.imageUrl){
+        userObject.imageUrl=userObject.imageUrl.toString("base64")
+    }
+
+    return userObject
+}
 
 //create model based on schema
 const User = mongoose.model('User', userSchema);
