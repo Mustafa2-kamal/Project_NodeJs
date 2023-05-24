@@ -7,6 +7,7 @@ const handleNewImage = async (req, res) => {
 
     console.log('kkkkkk');
     const email = req.params.userId;
+    console.log(email);
 
     try {
         

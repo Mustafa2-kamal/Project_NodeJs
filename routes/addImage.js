@@ -18,7 +18,7 @@ const upload = multer({
 //     }
  })
 
-router.post('/:userId',upload.single('image'),  addImage.handleNewImage);
+router.post('/:userId',upload.single('upload'),  addImage.handleNewImage);
 
 
 module.exports = router;
