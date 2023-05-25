@@ -20,7 +20,7 @@ const handleChangePassword = async (req, res) => {
 
     if (!foundUser) return res.status(404).send("message:The email is incorrect");//({'message': "The email or password is incorrect","status":"401"}); //Unauthorized 
 
-    const match = await bcrypt.compare(pwd, foundUser.password);
+    const match = await bcrypt.compare(pwd, foundUser.password); 
     if (match) {
 
         try {

@@ -71,7 +71,7 @@ app.use('/carMakers', require('./routes/getCarMaker'));
 
 app.use('/servicesNames', require('./routes/servicesNames'));
 
-app.use('/resetPassword', require('./routes/resetPassword'));
+app.use('/password-reset', require('./routes/resetPassword'));
 
 app.use('/sendEmail', require('./routes/sendEmail'));
 
@@ -100,6 +100,7 @@ app.use('/allUsers', require('./routes/getUsers.js'));
 
 app.use('/someProduct', require('./routes/getRandomProduct.js'));
 
+app.use('/allOrders', require('./routes/getAllOrders.js'));
 
 
 app.use('*',(req,res)=>{

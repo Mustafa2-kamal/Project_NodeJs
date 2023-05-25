@@ -7,6 +7,7 @@ const handlSendEmail = async (req, res) => {
 
 
     const email = req.params.userId;
+    const token = req.params.token;
 
     console.log(email);
 
@@ -40,9 +41,9 @@ const handlSendEmail = async (req, res) => {
 
         await transporter.sendMail({
             from: 'a-lamak@hotmail.com',
-            to: 'mostafakamalsokar@gmail.com',//this is {email}
+            to: 'utest7001@gmail.com',//this is {email}
             subject: 'Reset your password for Head Gasket app',
-            text: `Hi there,\n Click on the link below to reset your password \n http://localhost:3000/resetPassword/${email}`
+            text: `Hi there,\n \n  Click on the link below to reset your password \n http://localhost:3000/password-reset/${token}/${email}`
         });
    
 
