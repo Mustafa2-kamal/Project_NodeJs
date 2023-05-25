@@ -82,6 +82,12 @@ const userSchema = new Schema({ //object
     rating: {
         type: Number,
         default:1.5
+    },
+
+    userNotify: {
+        type: String,
+        default: "n"
+
     }
 
 
