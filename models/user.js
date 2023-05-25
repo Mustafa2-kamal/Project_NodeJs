@@ -88,7 +88,14 @@ const userSchema = new Schema({ //object
         type: String,
         default: "n"
 
+    },
+
+    workerNotify: {
+        type: String,
+        default: "n"
+
     }
+    
 
 
 });
