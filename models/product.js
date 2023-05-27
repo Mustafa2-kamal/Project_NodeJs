@@ -37,15 +37,29 @@ const productSchema = new Schema({ //object
         required: true
     },
 
-    imageUrl: {
-        type: String,
-        required: true,
-        default:'fghj'
+    // imageUrl: {
+    //     type: String,
+    //     required: true,
+    //     default:'fghj'
+    // }
 
-    }
+    imageUrl: {
+        type: Buffer, 
+    },
 
 });
 
+
+productSchema.methods.toJSON = function () {
+    const product = this
+    const productObject = product.toObject()
+
+    if(productObject.imageUrl){
+        productObject.imageUrl=productObject.imageUrl.toString("base64")
+    }
+
+    return productObject
+}
 
 //create model based on schema
 const Product = mongoose.model('Product', productSchema);

@@ -1,0 +1,24 @@
+const express = require('express');
+const router = express.Router();
+const path=require('path');
+
+const addImage= require('../controllers/addProductImage.js');
+
+const multer = require('multer');
+
+const upload = multer({
+    limits: {
+        fileSize: 1000000
+    },
+//     fileFilter(req, file, cb) {
+//         if (!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
+//             return cb(new Error('Please upload a valid image file'))
+//         }
+//         cb(undefined, true)
+//     }
+ })
+
+router.post('/:productId',upload.single('upload'),  addImage.handleNewImage);
+
+
+module.exports = router;

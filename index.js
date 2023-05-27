@@ -77,9 +77,17 @@ app.use('/sendEmail', require('./routes/sendEmail'));
 
 app.use('/confirmResetPassword', require('./routes/confirmResetPassword'));
 
+
+
 app.use('/addProduct', require('./routes/addProduct.js'));
 
+app.use('/updateProduct', require('./routes/updateProduct.js'));
+
 app.use('/Products', require('./routes/getProducts.js'));
+
+app.use('/removeProduct', require('./routes/deleteProduct.js'));
+
+
 
 app.use('/addOrder', require('./routes/addOrder.js'));
 
@@ -92,7 +100,7 @@ app.use('/rateWorker', require('./routes/rateWorker.js'));
 
 app.use('/topWorkers', require('./routes/topWorkers.js'));
 
-app.use('/updateProduct', require('./routes/updateProduct.js'));
+
 
 app.use('/removeUser', require('./routes/deleteUser.js'));
 
@@ -101,6 +109,20 @@ app.use('/allUsers', require('./routes/getUsers.js'));
 app.use('/someProduct', require('./routes/getRandomProduct.js'));
 
 app.use('/allOrders', require('./routes/getAllOrders.js'));
+
+
+
+
+
+app.use('/addProductImage', require('./routes/addProductImage.js'));
+
+app.use('/getProductImage', require('./routes/getProductImage.js'));
+
+app.use('/getNumbers', require('./routes/getNumbers.js'));
+
+
+
+
 
 
 app.use('*',(req,res)=>{

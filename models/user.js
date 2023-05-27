@@ -7,7 +7,6 @@ const userSchema = new Schema({ //object
 
     imageUrl: {
         type: Buffer, 
-    
     },
 
     firstName: {
@@ -95,7 +94,7 @@ const userSchema = new Schema({ //object
         default: "n"
 
     }
-    
+
 
 
 });
