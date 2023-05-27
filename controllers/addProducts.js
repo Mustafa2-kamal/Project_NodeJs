@@ -21,8 +21,9 @@ const handleNewProduct = async (req, res) => {
         (req.body);
 
         console.log(result);
+        console.log(result[0]._id);
 
-        res.status(200).json({ 'success': ` the Product added successfully` });
+        res.status(200).json({ 'success': ` the Product added successfully`,id:result[0]._id });
     } catch (err) {
         res.status(500).json({ 'message': err.message });
     }

@@ -120,7 +120,7 @@ app.use('/getProductImage', require('./routes/getProductImage.js'));
 
 app.use('/getNumbers', require('./routes/getNumbers.js'));
 
-
+app.use('/updateProductQuantity', require('./routes/updateProductQuantity.js'));
 
 
 
