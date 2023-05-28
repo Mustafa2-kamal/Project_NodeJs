@@ -12,7 +12,7 @@ const handleGetServices = async (req, res) => {
     // console.log(foundUser2);
 
 
-    if (!services) return res.status(401).send("message:No Services");//({'message': "The email or password is incorrect","status":"401"}); //Unauthorized 
+    if (!services) return res.status(404).send("message:No Services");//({'message': "The email or password is incorrect","status":"401"}); //Unauthorized 
 
 //    console.log(foundUser[0].serviceName);
     res.status(200).send(services)

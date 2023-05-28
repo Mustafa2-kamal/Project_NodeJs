@@ -15,6 +15,8 @@ const handleUpdateProduct = async (req, res) => {
 
         let q=found[0].quantity;
 
+        console.log(q);
+
         let newQ=q-req.body.quantity;
 
 

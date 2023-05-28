@@ -112,6 +112,10 @@ app.use('/allOrders', require('./routes/getAllOrders.js'));
 
 
 
+app.use('/userHistoryOrders', require('./routes/userHistoryOrder.js'));
+
+
+
 
 
 app.use('/addProductImage', require('./routes/addProductImage.js'));
@@ -121,6 +125,10 @@ app.use('/getProductImage', require('./routes/getProductImage.js'));
 app.use('/getNumbers', require('./routes/getNumbers.js'));
 
 app.use('/updateProductQuantity', require('./routes/updateProductQuantity.js'));
+
+app.use('/getRandomUsers', require('./routes/getRandomUsers.js'));
+
+app.use('/getRandomOrders', require('./routes/getRandomOrders.js'));
 
 
 
