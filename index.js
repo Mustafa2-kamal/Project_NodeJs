@@ -126,9 +126,9 @@ app.use('/getNumbers', require('./routes/getNumbers.js'));
 
 app.use('/updateProductQuantity', require('./routes/updateProductQuantity.js'));
 
-app.use('/getRecentUsers', require('./routes/getRandomUsers.js'));
+app.use('/getRecentUsers', require('./routes/getRecentUsers.js'));
 
-app.use('/getRecentOrders', require('./routes/getRandomOrders.js'));
+app.use('/getRecentOrders', require('./routes/getRecentOrders.js'));
 
 
 
