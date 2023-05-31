@@ -116,6 +116,8 @@ app.use('/userHistoryOrders', require('./routes/userHistoryOrder.js'));
 
 
 
+app.use('/addOrderImage', require('./routes/addOrderImage.js'));
+app.use('/getOrderImage', require('./routes/getOrderImage.js'));
 
 
 app.use('/addProductImage', require('./routes/addProductImage.js'));
@@ -129,6 +131,15 @@ app.use('/updateProductQuantity', require('./routes/updateProductQuantity.js'));
 app.use('/getRecentUsers', require('./routes/getRecentUsers.js'));
 
 app.use('/getRecentOrders', require('./routes/getRecentOrders.js'));
+
+
+
+app.use('/joinRequest', require('./routes/joinAsAServiceProvider.js'));
+app.use('/getJoinRequests', require('./routes/getJoinRequests.js'));
+
+
+app.use('/addCertificate', require('./routes/addWorkerCertificate.js'));
+app.use('/getCertificate', require('./routes/getWorkerCertificate.js'));
 
 
 

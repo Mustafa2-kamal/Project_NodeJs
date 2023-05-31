@@ -4,19 +4,7 @@ const handleAddWorker = async (req, res) => {
 
     console.log(req.body)
  
-    // const user = req.body.username;
-    // const email = req.body.email;
-    // const pwd = req.body.password;
 
-    // const email = req.params.userId;
-
-    // console.log(email);
-
-    // const foundUser = await User.findOne({ email: email})
-
-    // if (!foundUser) return res.status(404).send("message:The email is incorrect");//({'message': "The email or password is incorrect","status":"401"}); //Unauthorized 
-
-    // res.status(200).send(foundUser);
     try {
         console.log(req.params.userId);
 

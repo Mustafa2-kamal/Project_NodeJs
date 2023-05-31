@@ -5,6 +5,11 @@ const { Schema } = mongoose;
 const orderSchema = new Schema({ //object
 
     //id
+
+    imageUrl: {
+        type: Buffer, 
+    },
+    
     userEmail: {
         type: String,
         required: true,
@@ -75,6 +80,22 @@ const orderSchema = new Schema({ //object
     },
 
 });
+
+
+
+
+orderSchema.methods.toJSON = function () {
+    const order = this
+    const orderObject = order.toObject()
+
+    if(orderObject.imageUrl){
+        orderObject.imageUrl=orderObject.imageUrl.toString("base64")
+    }
+
+    return orderObject
+}
+
+
 
 
 //create model based on schema

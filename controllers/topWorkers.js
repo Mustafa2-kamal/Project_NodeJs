@@ -4,8 +4,11 @@ const User = require('../models/user.js');
 
 const handleGetTopWorkers = async (req, res) => {
 
-    console.log('lllll');
-    const found = await User.find({ role: 'worker'}).exec();
+    let carModel=req.params.carModel;
+    let carBrand=carModel.split(' ')[0];
+
+    console.log(carBrand);
+    const found = await User.find({ role: 'worker',carBrand:carBrand}).exec();
 
 
     if (!found) return res.status(404).json({ message: "No workers" });

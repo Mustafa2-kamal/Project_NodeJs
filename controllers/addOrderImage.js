@@ -1,4 +1,4 @@
-const Product = require('../models/product.js');
+const order = require('../models/order.js');
 
 const sharp=require('sharp');
 
@@ -6,7 +6,7 @@ const sharp=require('sharp');
 const handleNewImage = async (req, res) => {
 
     console.log('kkkkkk');
-    const id = req.params.productId;
+    const id = req.params.orderId;
     console.log(id);
 
     try {
@@ -17,7 +17,7 @@ const handleNewImage = async (req, res) => {
 
         console.log(buffer);
 
-    const result = await Product.findOneAndUpdate({_id:id}, {imageUrl:buffer},{new:true});
+    const result = await order.findOneAndUpdate({_id:id}, {imageUrl:buffer},{new:true});
    
 
     if (!result ) {
@@ -26,7 +26,7 @@ const handleNewImage = async (req, res) => {
 
     result.save();
     // res.send(result);
-   res.status(200).json({ 'success': `product image added successfully` });
+   res.status(200).json({ 'success': `order image added successfully` });
 
     } catch (err) {
         res.status(500).json({ 'message': err.message });

@@ -37,6 +37,11 @@ const userSchema = new Schema({ //object
 
     carModel: {
         type: String,
+        required: true
+    },
+
+    carModel2: {
+        type: String,
     },
 
     city: {
