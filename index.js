@@ -141,6 +141,7 @@ app.use('/getJoinRequests', require('./routes/getJoinRequests.js'));
 app.use('/addCertificate', require('./routes/addWorkerCertificate.js'));
 app.use('/getCertificate', require('./routes/getWorkerCertificate.js'));
 
+app.use('/allWorkers', require('./routes/getAllWorkers.js'));
 
 
 

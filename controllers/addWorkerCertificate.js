@@ -6,8 +6,8 @@ const sharp=require('sharp');
 const handleNewImage = async (req, res) => {
 
     console.log('kkkkkk');
-    const email = req.params.userId;//email
-    console.log(email);
+    const id = req.params.id;//email
+
 
     try {
         
@@ -17,7 +17,7 @@ const handleNewImage = async (req, res) => {
 
         console.log(buffer);
 
-    const result = await join.findOneAndUpdate({workerEmail:email}, {certificateImage:buffer},{new:true});
+    const result = await join.findOneAndUpdate({_id:id}, {certificateImage:buffer},{new:true});
    
 
     if (!result ) {

@@ -6,10 +6,10 @@ const handleGetImage = async (req, res) => {
 
     
     //  const name = req.body.serviceName;
-     const id = req.params.userId;
+     const id = req.params.id;
 
 
-    const found = await join.find({ workerEmail:id}).exec();
+    const found = await join.find({ _id:id}).exec();
 
 
     if (!found) return res.status(404).json({ message: "No joins" });

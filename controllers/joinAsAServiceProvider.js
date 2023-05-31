@@ -6,28 +6,26 @@ const handleNewjoin = async (req, res) => {
 
     console.log(req.body);
 
-    const {workerEmail,workerName,serviceName,note,carBrand} = req.body;
+    const {email,major,bio,carBrand,firstName,lastName,phone} = req.body;
 
-   
 
-   // check for duplicate usernames in the db
-    const isjoinExist = await join.findOne({ workerEmail: workerEmail }).exec();
-    if (isjoinExist) return res.status(409).json({ 'message': `This join: ${workerEmail} is already exist. ` }); //Conflict 
-
+  
     try {
 
         //create and store the new user
         const result = await join.create({ 
-            "workerName": workerName,
-            "workerEmail": workerEmail,
-            "serviceName":serviceName,
+            "firstName": firstName,
+            "lastName": lastName,
+            "workerEmail": email,
+            "phone": phone,
+            "serviceName":major,
             "carBrand":carBrand,
-            "bio":note,
+            "bio":bio,
         });
 
         console.log(result);
 
-        res.status(200).json({ 'success': ` the join ${workerEmail} added successfully` });
+        res.status(200).json({ 'success': ` the join ${workerEmail} added successfully`,id:result[0]._id  });
     } catch (err) {
         res.status(500).json({ 'message': err.message});
     }

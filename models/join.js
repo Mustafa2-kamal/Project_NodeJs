@@ -9,12 +9,23 @@ const joinSchema = new Schema({ //object
         type: Buffer, 
     },
 
-    workerName: {
+
+    firstName: {
+        type: String,
+        required: true
+    },
+
+    lastName: {
         type: String,
         required: true
     },
 
     workerEmail: {
+        type: String,
+        required: true
+    },
+
+    phone: {
         type: String,
         required: true
     },
