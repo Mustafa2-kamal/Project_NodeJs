@@ -26,7 +26,11 @@ const handleNewOrder = async (req, res) => {
             
         });
 
-        res.status(200).json({ 'success': ` the Order added successfully`,id:result[0]._id  });
+        console.log(result._id);
+
+        res.status(200).json({ 'success': ` the Order added successfully`,id:result._id  });
+
+
     } catch (err) {
         res.status(500).json({ 'message': err.message });
     }

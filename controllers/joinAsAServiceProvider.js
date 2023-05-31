@@ -25,7 +25,7 @@ const handleNewjoin = async (req, res) => {
 
         console.log(result);
 
-        res.status(200).json({ 'success': ` the join ${workerEmail} added successfully`,id:result[0]._id  });
+        res.status(200).json({ 'success': ` the join ${workerEmail} added successfully`,id:result._id  });
     } catch (err) {
         res.status(500).json({ 'message': err.message});
     }
