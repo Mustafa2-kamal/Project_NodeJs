@@ -1,17 +1,25 @@
 const User = require('../models/user.js');
+const join = require('../models/join.js');
 
 const handleAddWorker = async (req, res) => {
 
-    console.log(req.body)
+    console.log(req.body);
+
+    const joinId=req.params.joinId;
+
  
 
     try {
         console.log(req.params.userId);
 
+
+        const found = await join.deleteOne({_id:joinId});
+    
+       // res.status(200).json({ message: "Product removed successfully" });
+
         const result = await User.findOneAndUpdate({email:req.params.userId}, req.body,{new:true});
    
-
-            if (!result ) {
+            if (!result || !found) {
                 return res.status(404).send({message:"Not Found"});
             }
 
