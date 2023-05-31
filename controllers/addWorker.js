@@ -6,6 +6,7 @@ const handleAddWorker = async (req, res) => {
     console.log(req.body);
 
     const joinId=req.params.joinId;
+    const role=req.body.role;
 
  
 
@@ -29,6 +30,9 @@ const handleAddWorker = async (req, res) => {
             // res.send(result);
            res.status(200).json({ success: `Joined successfully, welcome to our team` });
         }
+
+        res.status(200).json({ message: "join request removed successfully" });
+
     } catch (err) {
         res.status(500).json({ 'message': err.message });
     }
