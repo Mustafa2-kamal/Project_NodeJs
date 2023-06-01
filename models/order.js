@@ -40,14 +40,57 @@ const orderSchema = new Schema({ //object
         required: true
     },
 
-    price: {
+    price1: {
         type: Number,
         default:0.5
     },
 
+    price2: {
+        type: Number,
+        default:0.5
+    },
+
+    estimatedTime:{
+    type: Number,
+    default:0.5
+    },
+
+    startingTime:{
+        type: Date,
+        required: true,
+        default:  new Date(),
+        },
+
+    endingTime:{
+        type: Date,
+        required: true,
+        default:  new Date(),
+
+        },
+
+    remainTime:{
+        type: Number,
+        default:0.5
+        },
+
+
+
+    problem: {
+        type: String,
+        required: true,
+        default:'n'
+    },
+
     status: {
         type: String,
-        required: true
+        required: true,
+        default:'n'
+    },
+
+    status2: {
+        type: String,
+        required: true,
+        default:'n'
     },
 
     note: {

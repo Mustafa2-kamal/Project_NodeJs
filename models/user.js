@@ -98,7 +98,13 @@ const userSchema = new Schema({ //object
         type: String,
         default: "n"
 
-    }
+    },
+
+    availableTime:{
+        type: Date,
+        required: true,
+        default:  new Date(),
+        },
 
 
 
