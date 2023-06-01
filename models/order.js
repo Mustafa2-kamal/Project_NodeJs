@@ -40,6 +40,11 @@ const orderSchema = new Schema({ //object
         required: true
     },
 
+    price: {
+        type: Number,
+        default:0.1
+    },
+
     price1: {
         type: Number,
         default:0.5
