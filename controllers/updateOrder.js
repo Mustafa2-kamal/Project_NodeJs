@@ -16,12 +16,16 @@ const handleUpdateOrder = async (req, res) => {
      
         if(status=='working') {
             const found = await user.find({ role: 'worker',email:email}).exec();
-            const date=found.availableTime;
-            const newDate=new Date();
+            let date=found.availableTime;
+            let newDate=new Date();
 
             console.log(newDate);
 
-            if(false){
+            if(newDate>date){
+
+
+                console.log(newDate);
+                console.log(newDate.getTime());
 
 
                 const endingDate = new Date(newDate.getTime() + estimatedTime * 60 * 60 * 1000);
