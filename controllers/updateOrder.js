@@ -19,6 +19,8 @@ const handleUpdateOrder = async (req, res) => {
             let date=found.availableTime;
             let newDate=new Date();
 
+            console.log(date+'kkkk');
+
             console.log(newDate);
 
             if(newDate>date){
@@ -47,6 +49,8 @@ const handleUpdateOrder = async (req, res) => {
 
             }
             else{
+
+                console.log(newDate+'hhhhh');
 
                 const endingDate = new Date(date.getTime() + estimatedTime * 60 * 60 * 1000);
 
