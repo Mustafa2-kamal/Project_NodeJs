@@ -19,10 +19,13 @@ const handleUpdateOrder = async (req, res) => {
             const date=found.availableTime;
             const datenew=new Date();
 
+            console.log(datenew);
+
 
             if(datenew>date){
 
                 let startTime=datenew;
+                console.log(startTime);
 
                 const endingDate = new Date(startTime.getTime() + estimatedTime * 60 * 60 * 1000);
 
