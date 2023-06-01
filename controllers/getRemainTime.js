@@ -28,6 +28,7 @@ const handleGetRemainTime = async (req, res) => {
                 },{new:true});
 
                 result.save();
+                res.status(200).json({time:remainingHours+'h:'+remainingMinutes+'m'});
      
 
     } catch (err) {
