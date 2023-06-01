@@ -18,7 +18,7 @@ const handleUpdateOrder = async (req, res) => {
             const found = await User.findOne({ email:email, role: 'worker',});
 
             let date=found.availableTime;
-            let newDate=new Date();
+            let newDate= new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Gaza' }));;
 
             console.log(date+'kkkk');
 

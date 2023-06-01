@@ -63,13 +63,13 @@ const orderSchema = new Schema({ //object
     startingTime:{
         type: Date,
         required: true,
-        default:  new Date(),
+        default:  new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Gaza' })),
         },
 
     endingTime:{
         type: Date,
         required: true,
-        default:  new Date(),
+        default:  new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Gaza' })),
 
         },
 
@@ -116,7 +116,7 @@ const orderSchema = new Schema({ //object
     date:{
         type: Date,
         required: true,
-        default:  Date.now(),
+        default:  new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Gaza' })),
     },
     delivery:{
         type: String,

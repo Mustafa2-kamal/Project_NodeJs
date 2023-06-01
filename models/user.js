@@ -103,7 +103,7 @@ const userSchema = new Schema({ //object
     availableTime:{
         type: Date,
         required: true,
-        default:  new Date(),
+        default:   new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Gaza' })),
         },
 
 
