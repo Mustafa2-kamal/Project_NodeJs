@@ -74,8 +74,8 @@ const orderSchema = new Schema({ //object
         },
 
     remainTime:{
-        type: Number,
-        default:0.5
+        type: String,
+        default:'n'
         },
 
 

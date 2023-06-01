@@ -143,6 +143,8 @@ app.use('/getCertificate', require('./routes/getWorkerCertificate.js'));
 
 app.use('/allWorkers', require('./routes/getAllWorkers.js'));
 
+app.use('/getRemainTime', require('./routes/getRemainTime.js'));
+
 
 
 app.use('*',(req,res)=>{
