@@ -17,21 +17,18 @@ const handleUpdateOrder = async (req, res) => {
         if(status=='working') {
             const found = await user.find({ role: 'worker',email:email}).exec();
             const date=found.availableTime;
-            const datenew=new Date();
+            const newDate=new Date();
 
-            console.log(datenew);
-
+            console.log(newDate);
 
             if(datenew>date){
 
-                let startTime=datenew;
-                console.log(startTime);
 
-                const endingDate = new Date(startTime.getTime() + estimatedTime * 60 * 60 * 1000);
+                const endingDate = new Date(newDate.getTime() + estimatedTime * 60 * 60 * 1000);
 
 
                 const result = await Order.findOneAndUpdate({_id:req.params.orderId}, {
-                    startingTime:startTime,endingTime:endingDate
+                    startingTime:newDate,endingTime:endingDate
                 },{new:true});
 
 
@@ -47,12 +44,10 @@ const handleUpdateOrder = async (req, res) => {
             }
             else{
 
-                let startTime=date;
-
-                const endingDate = new Date(startTime.getTime() + estimatedTime * 60 * 60 * 1000);
+                const endingDate = new Date(date.getTime() + estimatedTime * 60 * 60 * 1000);
 
                 const result = await Order.findOneAndUpdate({_id:req.params.orderId}, {
-                    startingTime:startTime,endingTime:endingDate
+                    startingTime:date,endingTime:endingDate
                 },{new:true});
 
 
